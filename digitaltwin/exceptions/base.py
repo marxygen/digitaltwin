@@ -1,4 +1,8 @@
 from typing import Type
+from digitaltwin.constants import api, misc
+import logging
+
+logger = logging.getLogger(misc.LOGGER_NAME)
 
 
 class DigitalTwinException(Exception):
@@ -14,7 +18,8 @@ class DigitalTwinException(Exception):
     ):
         self.subcode = subcode
         self.trace = trace
-        self.description = description
+        self.description = description or api.ERROR_SUBCODES.get(subcode, "")
+        logger.error(str(self))
 
     def __str__(self):
         return f"[{self.subcode}] {self.description} ({self.trace})"
@@ -34,4 +39,4 @@ class DigitalTwinException(Exception):
             for exception in cls.__subclasses__()
             if getattr(exception, "on_status_code") == status_code
         ]
-        return match or cls
+        return match[0] if match else cls

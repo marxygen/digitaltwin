@@ -1,1 +1,1 @@
-API_ROOT = "https://rest.digitaltwin.com/"
+API_ROOT = "https://api.trustedtwin.com/"

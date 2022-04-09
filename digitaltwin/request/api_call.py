@@ -1,7 +1,10 @@
 import requests
-from constants import api, errors
-from exceptions.base import DigitalTwinException
+from digitaltwin.constants import api, misc
+from digitaltwin.exceptions.base import DigitalTwinException
 from urllib.parse import urljoin
+import logging
+
+logger = logging.getLogger(misc.LOGGER_NAME)
 
 
 class APICall:
@@ -54,11 +57,13 @@ class APICall:
             raise ValueError(f"Unsupported method: '{self.method}'")
 
         self.response = getattr(requests, self.method)(
-            format="json",
             url=self.url,
             params=self.query_params,
             data=self.data,
             **self.kwargs,
+        )
+        logger.debug(
+            f"{self.method.upper()}: {self.url}, STATUS: {self.response.status_code}"
         )
 
         # If a non successful response is returned, raise an appropriate exception
