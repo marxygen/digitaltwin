@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-04-09T11:30:56.959Z" agent="5.0 (X11)" etag="MuLSLnyl6RcHQ15THGa_" version="17.4.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-09T11:31:38.750Z" agent="5.0 (X11)" etag="OfsZDItKeVPdFxlBWQMb" version="17.4.2" type="github">
   <diagram id="iMYemAOUo0te4ojFWHKz" name="Page-1">
-    <mxGraphModel dx="2628" dy="1995" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="3038" dy="2202" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -297,7 +297,7 @@
           <mxGeometry width="30" height="340" as="geometry" />
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-135" value="APICall" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="920" y="-1080" width="200" height="220" as="geometry" />
+          <mxGeometry x="920" y="-1080" width="200" height="250" as="geometry" />
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-169" value="url (str)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=0" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-135">
           <mxGeometry y="40" width="200" height="30" as="geometry" />
@@ -308,14 +308,17 @@
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-171" value="data (dict)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=0" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-135">
           <mxGeometry y="100" width="200" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="IgA6ZzLSgMnh5oIue-sd-175" value="kwargs (dict) = {}" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=0" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-135">
+        <mxCell id="IgA6ZzLSgMnh5oIue-sd-176" value="method (str)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=0" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-135">
           <mxGeometry y="130" width="200" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="IgA6ZzLSgMnh5oIue-sd-166" value="call" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=2" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-135">
+        <mxCell id="IgA6ZzLSgMnh5oIue-sd-175" value="kwargs (dict) = {}" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=0" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-135">
           <mxGeometry y="160" width="200" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="IgA6ZzLSgMnh5oIue-sd-155" value="response (requests.Response)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=0" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-135">
+        <mxCell id="IgA6ZzLSgMnh5oIue-sd-166" value="call" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=2" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-135">
           <mxGeometry y="190" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IgA6ZzLSgMnh5oIue-sd-155" value="response (requests.Response)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=0" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-135">
+          <mxGeometry y="220" width="200" height="30" as="geometry" />
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-172" value="A wrapper around `requests` calls&#xa;that resolves the errors and raises exceptions, if needed&#xa;" style="shape=partialRectangle;fillColor=none;align=left;verticalAlign=middle;strokeColor=none;spacingLeft=34;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontSize=14;" vertex="1" parent="1">
           <mxGeometry x="1130" y="-1080" width="90" height="220" as="geometry" />
