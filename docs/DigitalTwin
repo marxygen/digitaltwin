@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-04-09T13:24:20.502Z" agent="5.0 (X11)" etag="TNkTCr1_pg_iJFmdb-gY" version="17.4.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-09T13:27:15.722Z" agent="5.0 (X11)" etag="53XC0eGL1aZ3sOA5j9bw" version="17.4.2" type="github">
   <diagram id="iMYemAOUo0te4ojFWHKz" name="Page-1">
-    <mxGraphModel dx="2628" dy="2050" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1778" dy="2050" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -52,7 +52,7 @@
           <mxGeometry x="10" y="-340" width="810" height="250" as="geometry" />
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-23" value="TwinStatus" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
-          <mxGeometry x="270" y="100" width="140" height="90" as="geometry" />
+          <mxGeometry x="285" y="110" width="140" height="90" as="geometry" />
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-24" value="Alive" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-23">
           <mxGeometry y="30" width="140" height="30" as="geometry" />
@@ -61,7 +61,7 @@
           <mxGeometry y="60" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-28" value="CreationCertificate (Read Only)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="-30" y="245" width="220" height="120" as="geometry" />
+          <mxGeometry x="10" y="245" width="220" height="120" as="geometry" />
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-29" value="uuid (string, twin UUID)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-28">
           <mxGeometry y="30" width="220" height="30" as="geometry" />
@@ -89,7 +89,7 @@
         </mxCell>
         <UserObject label="Identity" link="https://gitlab.com/trustedtwinpublic/api-documentation-public/-/blob/main/Reference/identity.md#identity" id="IgA6ZzLSgMnh5oIue-sd-44">
           <mxCell style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-            <mxGeometry x="110" y="-85" width="140" height="300" as="geometry" />
+            <mxGeometry x="130" y="-100" width="140" height="300" as="geometry" />
           </mxCell>
         </UserObject>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-45" value="visibility (True or None)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-44">
