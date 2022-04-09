@@ -1,1 +1,3 @@
 USER_SECRET_LENGTH = 64
+USER_NAME_REGEXP = r"[0-9A-Za-z][0-9A-Za-z_ \-]{0,30}[0-9A-Za-z]"
+DESCRIPTION_KEY_REGEXP = r"[a-z_][0-9a-z_]{0,63}"
