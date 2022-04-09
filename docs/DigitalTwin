@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-04-09T10:45:44.161Z" agent="5.0 (X11)" etag="Esx3NFRTm1uFez36WcTX" version="17.4.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-09T10:47:08.255Z" agent="5.0 (X11)" etag="S4VEo-_P4Kc85GMISuZ9" version="17.4.2" type="github">
   <diagram id="iMYemAOUo0te4ojFWHKz" name="Page-1">
-    <mxGraphModel dx="2430" dy="1896" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="3038" dy="2202" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -9,13 +9,13 @@
             <mxGeometry x="460" y="20" width="210" height="420" as="geometry" />
           </mxCell>
         </UserObject>
-        <mxCell id="IgA6ZzLSgMnh5oIue-sd-2" value="identities (List [Identity] )" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-1">
+        <mxCell id="IgA6ZzLSgMnh5oIue-sd-2" value="identities (EntityList [Identity] )" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-1">
           <mxGeometry y="30" width="210" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="IgA6ZzLSgMnh5oIue-sd-3" value="ledgers" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-1">
+        <mxCell id="IgA6ZzLSgMnh5oIue-sd-3" value="ledgers (EntityList [Ledger] )" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-1">
           <mxGeometry y="60" width="210" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="IgA6ZzLSgMnh5oIue-sd-4" value="docs" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-1">
+        <mxCell id="IgA6ZzLSgMnh5oIue-sd-4" value="docs (EntityList [Doc] )" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-1">
           <mxGeometry y="90" width="210" height="30" as="geometry" />
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-11" value="owner (string, Account UUID)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-1">
