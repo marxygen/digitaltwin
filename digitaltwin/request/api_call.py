@@ -13,6 +13,7 @@ class APICall:
     """
 
     url: str
+    user_secret: str
     query_params: dict
     data: dict
     method: str
@@ -23,9 +24,11 @@ class APICall:
     def __init__(
         self,
         url: str,
+        user_secret: str,
         query_params: dict = dict(),
         data: dict = dict(),
         method: str = "get",
+        headers: dict = dict(),
         call=True,
         **kwargs,
     ):
@@ -33,16 +36,25 @@ class APICall:
 
         Args:
             url (str): URL to make the request to. Domain will be added automatically
+            user_secret (str): User Secre
             query_params (dict, optional): Dictionary of query params. Defaults to dict().
             data (dict, optional): Request BODY. Defaults to dict().
             method (str, optional): Request method (`requests.<method>`). Defaults to "get".
             call (bool, optional): Whether a call must be made after instantiation. Defaults to True.
+            headers (dict, optional): Dictionary of headers. Defaults to {}. Authorization credentials will be added automatically
         """
+        if len(str(user_secret)) != api.USER_SECRET_LENGTH:
+            raise ValueError(
+                f"User Secret must be a string {api.USER_SECRET_LENGTH} characters long"
+            )
+
         self.url = urljoin(api.API_ROOT, url)
+        self.user_secret = user_secret
         self.query_params = query_params
         self.data = data
         self.method = method.lower()
         self.kwargs = kwargs
+        self.headers = {**headers, "Authorization": self.user_secret}
 
         if call:
             self.call()
@@ -61,6 +73,7 @@ class APICall:
             params=self.query_params,
             data=self.data,
             **self.kwargs,
+            headers=self.headers,
         )
         logger.debug(
             f"{self.method.upper()}: {self.url}, STATUS: {self.response.status_code}"
