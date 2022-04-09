@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-04-09T14:14:40.769Z" agent="5.0 (X11)" etag="HNGlLgw5zwFdIDodme8l" version="17.4.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-09T14:45:03.024Z" agent="5.0 (X11)" etag="ZpLlJoIereQCk0AUn2vM" version="17.4.2" type="github">
   <diagram id="iMYemAOUo0te4ojFWHKz" name="Page-1">
-    <mxGraphModel dx="1497" dy="1854" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1497" dy="1900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -250,7 +250,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-100" value="APIEntity" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="235" y="-1060" width="280" height="340" as="geometry" />
+          <mxGeometry x="235" y="-1060" width="280" height="370" as="geometry" />
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-101" value="create" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=3" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-100">
           <mxGeometry y="40" width="280" height="30" as="geometry" />
@@ -289,6 +289,9 @@
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-134" value="API_PREFIX (str) = __class__.__name__.lower()" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=0" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-100">
           <mxGeometry y="310" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IgA6ZzLSgMnh5oIue-sd-191" value="JSON_EXEMPT (dict) = {}" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=0" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-100">
+          <mxGeometry y="340" width="280" height="30" as="geometry" />
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-104" value="APIEntity is a universal base class &#xa;that is used to mark the objectmanaged by the API.&#xa;It MUST be used by all classes &#xa;that are to be managed by the API.&#xa;" style="shape=partialRectangle;fillColor=none;align=left;verticalAlign=middle;strokeColor=none;spacingLeft=34;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontSize=14;" vertex="1" parent="1">
           <mxGeometry x="505" y="-1060" width="90" height="340" as="geometry" />
@@ -378,6 +381,15 @@
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-190" value="delete" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=2" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-177">
           <mxGeometry y="326" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IgA6ZzLSgMnh5oIue-sd-192" value="DigitalTwinClient" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="235" y="-630" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="IgA6ZzLSgMnh5oIue-sd-199" value="user_secret: str" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=0" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-192">
+          <mxGeometry y="40" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IgA6ZzLSgMnh5oIue-sd-200" value="request" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=2" vertex="1" parent="IgA6ZzLSgMnh5oIue-sd-192">
+          <mxGeometry y="70" width="200" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
