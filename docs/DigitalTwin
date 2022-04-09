@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-04-09T11:31:38.750Z" agent="5.0 (X11)" etag="OfsZDItKeVPdFxlBWQMb" version="17.4.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-09T12:29:35.688Z" agent="5.0 (X11)" etag="G0Fbr4Tgh3H5_RSEPhjE" version="17.4.2" type="github">
   <diagram id="iMYemAOUo0te4ojFWHKz" name="Page-1">
-    <mxGraphModel dx="3038" dy="2202" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2628" dy="1995" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -321,10 +321,10 @@
           <mxGeometry y="220" width="200" height="30" as="geometry" />
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-172" value="A wrapper around `requests` calls&#xa;that resolves the errors and raises exceptions, if needed&#xa;" style="shape=partialRectangle;fillColor=none;align=left;verticalAlign=middle;strokeColor=none;spacingLeft=34;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontSize=14;" vertex="1" parent="1">
-          <mxGeometry x="1130" y="-1080" width="90" height="220" as="geometry" />
+          <mxGeometry x="1130" y="-1080" width="90" height="250" as="geometry" />
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-173" value="" style="shape=partialRectangle;top=0;left=0;bottom=0;fillColor=none;stokeWidth=1;dashed=1;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;fontSize=14;" vertex="1" connectable="0" parent="IgA6ZzLSgMnh5oIue-sd-172">
-          <mxGeometry width="30" height="220" as="geometry" />
+          <mxGeometry width="30" height="250.00000000000003" as="geometry" />
         </mxCell>
         <mxCell id="IgA6ZzLSgMnh5oIue-sd-174" value="" style="group" vertex="1" connectable="0" parent="1">
           <mxGeometry x="920" y="-820" width="310" height="70" as="geometry" />
