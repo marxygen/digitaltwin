@@ -1,3 +1,6 @@
+import digitaltwin.client
+
+
 class APIEntityMeta(type):
     """APIEntityMeta is a metaclass providing necessary functionality for the APIEntity subclasses"""
 
@@ -11,7 +14,7 @@ class APIEntityMeta(type):
 class APIEntity(metaclass=APIEntityMeta):
     """Any Entity that is to be managed by the API"""
 
-    CLIENT: "DigitalTwinClient"
+    CLIENT: digitaltwin.client.DigitalTwinClient
     READ_ONLY = False
     API_PREFIX = None
     JSON_EXEMPT = dict()

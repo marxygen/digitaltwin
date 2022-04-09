@@ -78,7 +78,7 @@ class APICall:
         )
 
         # If a non successful response is returned, raise an appropriate exception
-        if self.response.status_code % 100 != 200:
+        if self.response.status_code % 100 != 2:
             raise DigitalTwinException.get_status_code_exception(
                 status_code=self.response.status_code
             )(**self.response.json())
