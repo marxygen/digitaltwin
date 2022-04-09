@@ -1,4 +1,4 @@
-from .validator import BaseValidator
+from .base import BaseValidator
 from digitaltwin.constants.users import USER_NAME_REGEXP, DESCRIPTION_KEY_REGEXP
 from re import match
 

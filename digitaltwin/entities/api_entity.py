@@ -1,5 +1,6 @@
 import digitaltwin.client
-from digitaltwin.validators import 
+from typing import Type
+from digitaltwin.validators.base import BaseValidator
 
 
 class APIEntityMeta(type):
@@ -18,7 +19,7 @@ class APIEntity(metaclass=APIEntityMeta):
     CLIENT: digitaltwin.client.DigitalTwinClient
     READ_ONLY = False
     API_PREFIX = None
-    VALIDATOR
+    VALIDATOR: Type[BaseValidator]
     JSON_EXEMPT = dict()
 
     def to_json(self):
