@@ -76,7 +76,6 @@ class APICall:
         logger.debug(
             f"{self.method.upper()}: {self.url}, STATUS: {self.response.status_code}"
         )
-
         # If a non successful response is returned, raise an appropriate exception
         if self.response.status_code % 100 != 2:
             raise DigitalTwinException.get_status_code_exception(
