@@ -37,6 +37,6 @@ class DigitalTwinException(Exception):
         match = [
             exception
             for exception in cls.__subclasses__()
-            if getattr(exception, "on_status_code") == status_code
+            if getattr(exception, "on_status_code", None) == status_code
         ]
         return match[0] if match else cls

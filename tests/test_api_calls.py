@@ -9,3 +9,4 @@ def test_access_forbidden():
             url="/test/me/",
             user_secret="h3tadFKIMrgs4vhIm1peYwUzPXu+kQpml2LOfETAKgz6c+wBE+QeVqH9yVDaGwoo",
         )
+        call.call()

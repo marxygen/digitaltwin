@@ -30,3 +30,7 @@ that holds current client instance. That means that the same entities may be use
 ### Generating a user secret
 
 If you don't have a user secret, you can use `generate_secret` method to generate it.
+
+## Validators
+
+Some entities might have constraints imposed on them, such as a regex expression. To address this, there are **validators** - classes specifically designed to validate a particular entity. **A separate validator is written for each entity**.
