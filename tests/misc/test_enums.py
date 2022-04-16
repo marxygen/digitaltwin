@@ -8,4 +8,4 @@ def test_role_config():
 
     data = role_config.to_dict()
     assert isinstance(data, dict)
-    assert data == {"effect": "allow", "actions": ["create_user"]}
+    assert data == {"statement": {"effect": "allow", "actions": ["create_user"]}}
