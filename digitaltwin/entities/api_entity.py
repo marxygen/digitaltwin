@@ -14,9 +14,6 @@ class APIEntityMeta(type):
 
     def __new__(cls, name, bases, attrs):
         class_ = super(APIEntityMeta, cls).__new__(cls, name, bases, attrs)
-        # Set `URL_PATH` to equal plural lowercase class name (e.g. users, twins)
-        class_.URL_PATH = getattr(class_, "URL_PATH", None) or name.lower() + "s"
-        print(class_._get_class_attrs())
         if class_.PK is not None and class_.PK not in class_._get_class_attrs():
             raise AttributeError(
                 f"Field that is declared to be a primary key of the entity must be defined on {class_.__name__}: {class_.PK}"
@@ -75,6 +72,9 @@ class APIEntity(metaclass=APIEntityMeta):
         """High-level wrapper to unify request interface"""
         return self.CLIENT.request(api_call)
 
+    def __init_subclass__(cls) -> None:
+        cls.URL_PATH = getattr(cls, "URL_PATH", None) or cls.__name__.lower() + "s"
+
     def get_url(self, generic=False) -> str:
         """Get URL for this entity
 
@@ -91,7 +91,7 @@ class APIEntity(metaclass=APIEntityMeta):
         return join_urls(
             self.PARENT.get_url() if self.PARENT else None,
             self.URL_PATH,
-            getattr(self, "PK") if not generic else None,
+            getattr(self, self.PK) if not generic else None,
         )
 
     @classmethod
