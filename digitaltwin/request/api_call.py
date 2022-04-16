@@ -61,17 +61,17 @@ class APICall:
             user_secret (str, optional): User Secret to sign the API call. Used if the value was not provided during APICall instantiation
 
         Raises:
-            ValueError: If `method` provided is not available
+            AttributeError: If `method` provided is not available
         """
         if not hasattr(requests, self.method):
-            raise ValueError(f"Unsupported method: '{self.method}'")
+            raise AttributeError(f"Unsupported method: '{self.method}'")
 
         self.response = getattr(requests, self.method)(
             url=self.url,
             params=self.query_params,
             data=self.data,
             **self.kwargs,
-            headers={**self.headers, "Authorization": self.user_secret or user_secret},
+            headers={**self.headers, "Authorization": user_secret or self.user_secret},
         )
         logger.debug(
             f"{self.method.upper()}: {self.url}, STATUS: {self.response.status_code}"

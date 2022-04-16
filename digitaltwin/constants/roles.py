@@ -12,5 +12,6 @@ class Action(BaseConfig):
 
 
 class RoleConfig(BaseConfig):
+    NAME = "statement"
     effect: Effect
     actions: List[Action]

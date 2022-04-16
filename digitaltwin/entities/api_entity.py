@@ -15,7 +15,12 @@ class APIEntityMeta(type):
     def __new__(cls, name, bases, attrs):
         class_ = super(APIEntityMeta, cls).__new__(cls, name, bases, attrs)
         # Set `URL_PATH` to equal plural lowercase class name (e.g. users, twins)
-        class_.URL_PATH = name.lower() + "s"
+        class_.URL_PATH = getattr(class_, "URL_PATH", None) or name.lower() + "s"
+        print(class_._get_class_attrs())
+        if class_.PK is not None and class_.PK not in class_._get_class_attrs():
+            raise AttributeError(
+                f"Field that is declared to be a primary key of the entity must be defined on {class_.__name__}: {class_.PK}"
+            )
         return class_
 
 
@@ -32,6 +37,7 @@ class APIEntity(metaclass=APIEntityMeta):
     CONFIG_CLASS: Type[
         BaseConfig
     ] = None  # A class to allow to be used for more convenient configuration
+    PK: str = None  # Unique identifier for this entity. Must be a field defined in class body.
 
     def to_json(self):
         """Transform object to JSON representation"""
@@ -61,7 +67,7 @@ class APIEntity(metaclass=APIEntityMeta):
 
     def __setattr__(self, name, value):
         """Handle attribute setting"""
-        if self.VALIDATOR is not None and name not in self.to_json().keys():
+        if self.VALIDATOR is not None and name in self.to_json().keys():
             self.VALIDATOR.validate(name, value)
         return super(APIEntity, self).__setattr__(name, value)
 
@@ -69,11 +75,11 @@ class APIEntity(metaclass=APIEntityMeta):
         """High-level wrapper to unify request interface"""
         return self.CLIENT.request(api_call)
 
-    def get_url(self, general=False) -> str:
+    def get_url(self, generic=False) -> str:
         """Get URL for this entity
 
         Args:
-            general (bool, optional): If must be a general url (/users/ instead of /users/someuser/). Defaults to True.
+            generic (bool, optional): If must be a generic url (/users/ instead of /users/<uuid>/). Defaults to False.
 
         Returns:
             str: a URL
@@ -85,28 +91,38 @@ class APIEntity(metaclass=APIEntityMeta):
         return join_urls(
             self.PARENT.get_url() if self.PARENT else None,
             self.URL_PATH,
-            self.uuid if not general else None,
+            getattr(self, "PK") if not generic else None,
         )
 
-    def _get_entity_attrs(self):
+    @classmethod
+    def _get_class_attrs(cls) -> list:
+        """Get class attributes
+
+        Returns:
+            list: List of class attributes
+        """
+        return [
+            name
+            for name in [*cls.__annotations__.keys(), *cls.__dict__.keys()]
+            if not name.isupper() and not name.startswith("_")
+        ]
+
+    def _get_entity_attrs(self) -> list:
+        """Get attributes of the entity"""
         return {
-            **{name: type_ for name, type_ in self.__annotations__.items()},
-            **{
-                name: type(getattr(self, name))
-                for name in self.__dict__.keys()
-                if not name.isupper()
-                and not name.startswith("_")
-                and not callable(getattr(self, name))
-            },
+            name: type(getattr(self, name))
+            for name in self._get_class_attrs()
+            if not callable(getattr(self, name))
         }
 
     def __init__(self, config: Type[BaseConfig] = None, **kwargs):
         """Instantiate the APIEntity"""
         if self.CONFIG_CLASS and isinstance(config, self.CONFIG_CLASS):
             kwargs = config.to_dict()
+
         missing = [
             key
-            for key in self._get_entity_attrs().keys()
+            for key in self._get_class_attrs()
             if key not in kwargs and key not in self.__annotations__
         ]
         if missing:
@@ -114,7 +130,7 @@ class APIEntity(metaclass=APIEntityMeta):
                 f'{self.__class__.__name__} also requires the following attributes: {", ".join(missing)}'
             )
         for key, value in kwargs.items():
-            if key not in self.__annotations__:
+            if key not in self._get_class_attrs():
                 raise AttributeError(
                     f'{self.__class__.__name__} does not take "{key}" as an argument'
                 )
@@ -123,6 +139,10 @@ class APIEntity(metaclass=APIEntityMeta):
     def create(self) -> "APIEntity":
         """Create a new instance"""
         self.perform_request(
-            APICall(url=self.get_url(), method="POST", data=self.to_json())
+            APICall(url=self.get_url(generic=True), method="POST", data=self.to_json())
         )
         return self
+
+    def get(self):
+        """Fetch information about this entity"""
+        self.perform_request(APICall(url=self.get_url(), method="GET"))

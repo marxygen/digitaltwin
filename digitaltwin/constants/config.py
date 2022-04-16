@@ -30,4 +30,4 @@ class BaseConfig:
                     if not isinstance(field_value, list)
                     else [entry.to_dict() for entry in field_value]
                 )
-        return data
+        return {self.NAME: data}

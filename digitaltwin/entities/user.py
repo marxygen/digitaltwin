@@ -14,3 +14,4 @@ class User(APIEntity):
     updated_ts: float
 
     VALIDATOR = UserValidator()
+    PK = "uuid"

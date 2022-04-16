@@ -1,4 +1,5 @@
 from .api_entity import APIEntity
+from digitaltwin.constants import RoleConfig
 
 
 class Role(APIEntity):
@@ -9,3 +10,5 @@ class Role(APIEntity):
     statement: dict
     created_ts: float = None
     updated_ts: float = None
+
+    CONFIG_CLASS = RoleConfig
